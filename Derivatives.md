@@ -1,7 +1,3 @@
-Let's break down Andrej Karpathy's explanation **line-by-line**, **concept-by-concept**, with deep intuition and practical significance. I'll use his examples but explain them as if you're learning this for the first time.
-
----
-
 ### **Part 1: Derivatives of a Scalar Function**  
 **Function**: `f(x) = 3x² - 4x + 5`
 
@@ -11,6 +7,8 @@ xs = np.arange(-5, 5, 0.25)  # Create inputs from -5 to 5 in steps of 0.25
 ys = f(xs)                    # Compute f(x) for all these inputs
 plt.plot(xs, ys)              # Plot the parabola
 ```
+![alt text](image.png)
+
 **What's Happening**:  
 - We're creating a "grid" of input values (`xs`) to see how the function behaves visually.  
 - The plot shows the **shape** of the function (a parabola opening upwards).  
@@ -116,7 +114,7 @@ slope = (d_perturbed - d_original) / h  # (4.001 - 4)/0.001 = 1.0
 1. **Gradient Descent**:  
    - In training, we compute gradients (partial derivatives) for all parameters.  
    - Example: If `a`, `b`, `c` were weights in a network:  
-     - Gradient of `a` = `-3.0` → To minimize loss, we’d adjust `a` in the **opposite direction** (increase it, since gradient is negative).  
+     - Gradient of `a` = `-3.0` → To minimize loss, we’d adjust `a` in the **opposite direction** (increase it, since gradient is negative).
      - Gradient of `b` = `2.0` → Decrease `b`.  
      - Gradient of `c` = `1.0` → Decrease `c`.  
 
@@ -153,5 +151,3 @@ slope = (d_perturbed - d_original) / h  # (4.001 - 4)/0.001 = 1.0
 | Numerical Derivative  | `(f(x+h) - f(x)) / h`                | Approximates slope using tiny perturbations. |
 | Partial Derivative    | `∂d/∂a = (d(a+h,b,c) - d(a,b,c)) / h` | Measures sensitivity to one input.         |
 | Gradient              | Vector of all partial derivatives     | Direction to adjust parameters for optimization. |
-
-Would you like to walk through a specific scenario (e.g., debugging gradients in a neural network) next?
